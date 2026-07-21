@@ -1,0 +1,29 @@
+Original Sentence:
+Large Language Model is interesting
+
+Tokens:
+['Large', 'Language', 'Model', 'is', 'interesting']
+
+Word Embeddings:
+Large : [0.3, 0.5, 0.4]
+Language : [0.7, 0.8, 0.6]
+Model : [0.6, 0.4, 0.7]
+is : [0.2, 0.3, 0.2]
+interesting : [0.8, 0.9, 0.7]
+
+Embedding Matrix:
+[[0.3 0.5 0.4]
+ [0.7 0.8 0.6]
+ [0.6 0.4 0.7]
+ [0.2 0.3 0.2]
+ [0.8 0.9 0.7]]
+
+Attention Scores:
+Large -> 0.15
+Language -> 0.30
+Model -> 0.20
+is -> 0.10
+interesting -> 0.25
+
+Final Attention Output:
+[0.59, 0.65, 0.57]
