@@ -1,0 +1,63 @@
+import numpy as np
+
+# Step 1: Tokenization
+
+sentence = "Large Language Model is interesting"
+
+tokens = sentence.split()
+
+print("Original Sentence:")
+print(sentence)
+
+print("\nTokens:")
+print(tokens)
+
+
+# Step 2: Word Embeddings
+
+embedding = {
+    "Large": [0.3, 0.5, 0.4],
+    "Language": [0.7, 0.8, 0.6],
+    "Model": [0.6, 0.4, 0.7],
+    "is": [0.2, 0.3, 0.2],
+    "interesting": [0.8, 0.9, 0.7]
+}
+
+print("\nWord Embeddings:")
+for word in tokens:
+    print(word, ":", embedding[word])
+
+
+# Step 3: Embedding Matrix
+
+embedding_matrix = np.array([
+    [0.3, 0.5, 0.4],   # Large
+    [0.7, 0.8, 0.6],   # Language
+    [0.6, 0.4, 0.7],   # Model
+    [0.2, 0.3, 0.2],   # is
+    [0.8, 0.9, 0.7]    # interesting
+])
+
+print("\nEmbedding Matrix:")
+print(embedding_matrix)
+
+
+# Step 4: Attention Scores
+
+attention_scores = [0.15, 0.30, 0.20, 0.10, 0.25]
+
+print("\nAttention Scores:")
+for word, score in zip(tokens, attention_scores):
+    print(word, "->", score)
+
+
+# Step 5: Calculate Attention Output
+
+result = [0, 0, 0]
+
+for i in range(len(embedding_matrix)):
+    for j in range(3):
+        result[j] += embedding_matrix[i][j] * attention_scores[i]
+
+print("\nFinal Attention Output:")
+print(result)
